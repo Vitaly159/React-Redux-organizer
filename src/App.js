@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'; //*1
 import { addTodo } from './components/TodoSlice';
 
 import TodoList from './components/TodoList';
@@ -9,24 +9,19 @@ import './App.css';
 
 function App() {
   const [text, setText] = useState('');
-  const dispatch = useDispatch();
-  const addTask = () => dispatch(addTodo());
+  const dispatch = useDispatch(); //*1
 
   const handleAction = () => {
     if(text.trim().length) {
-      dispatch(addTodo({text}));
+      dispatch(addTodo({text})); //*1
       setText('');
     }
   };
 
-  const removeTodo = (id) => {
-    // setTodos(todos.filter(todo => todo.id !== id));
-  }
-
   return (
     <div className="App">
       <InputField handleAction={handleAction} text={text} setText={setText} />
-      <TodoList removeTodo={removeTodo} />
+      <TodoList />
     </div>
   );
 }

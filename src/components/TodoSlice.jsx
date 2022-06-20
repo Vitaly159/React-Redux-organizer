@@ -7,7 +7,6 @@ const todoSlice = createSlice({  //создается по умолчанию, �
     todos: []
   },
 
-
   reducers:{  // здесь функции(обработчики), набор методов
     addTodo(state, action) {
       console.log(state);
@@ -20,7 +19,9 @@ const todoSlice = createSlice({  //создается по умолчанию, �
       })
     },
 
-    removeTodo(state, action) {},
+    removeTodo(state, action) {
+      state.todos = state.todos.filter(todo => todo.id !== action.payload);
+    },
   },
   
 })
