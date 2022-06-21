@@ -12,7 +12,7 @@ const TodoList = () => {
       {
         todos.map(todo => 
           <li key={todo.id}>
-            <input type='checkbox' />
+            <input className="checkbox" type='checkbox' />
             <span>{todo.text}</span>
             <span className="red" onClick={() => dispatch(removeTodo(todo.id))}>&times;</span>
           </li>

@@ -1,13 +1,13 @@
-import {createSlice} from "@reduxjs/toolkit"; //создается по умолчанию 
+import {createSlice} from "@reduxjs/toolkit";
 import {v4 as uuid} from 'uuid';
 
-const todoSlice = createSlice({  //создается по умолчанию, всегда имя = название + Slice ('срез')
+const todoSlice = createSlice({
   name: 'todos',
   initialState: {
     todos: []
   },
 
-  reducers:{  // здесь функции(обработчики), набор методов
+  reducers:{
     addTodo(state, action) {
       console.log(state);
       console.log(action);
@@ -26,5 +26,5 @@ const todoSlice = createSlice({  //создается по умолчанию, �
   
 })
 
-export const {addTodo, removeTodo} = todoSlice.actions; // экспортируем экшины (всегда)
-export default todoSlice.reducer; // всегда, объединяет в себя всё, что написано выше (срез) И ПЕРЕДАЕТ В Store
+export const {addTodo, removeTodo} = todoSlice.actions;
+export default todoSlice.reducer;
